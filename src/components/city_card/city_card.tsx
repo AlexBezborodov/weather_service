@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { CityCardProps } from "../../interfaces";
 import { deleteCity } from "../../store/action_creators";
 import { updateCityWeatherData } from "../../store/async_actions/update_city_weather";
+import { convertToCelsius, convertToFarenghate } from "../../utils/utils";
 
 export default function CityCard({ city }: CityCardProps) {
   const {
@@ -22,16 +23,6 @@ export default function CityCard({ city }: CityCardProps) {
   const navigate = useNavigate();
   const dispatch = useDispatch<any>();
   const iconUrl = `http://openweathermap.org/img/w/${weather[0].icon}.png`;
-
-  const convertToCelsius = (val: string | number) => {
-    const temp = (+val - 273.15).toFixed(0);
-    return +temp > 0 ? `+ ${temp}` : temp;
-  };
-
-  const convertToFarenghate = (val: string | number) => {
-    const temp = ((+val - 273.15) * 1.8 + 32).toFixed(0);
-    return +temp > 0 ? `+ ${temp}` : temp;
-  };
 
   const refreshWeather = () => {
     dispatch(updateCityWeatherData(name));
