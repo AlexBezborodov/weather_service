@@ -22,7 +22,7 @@ export default function CityCard({ city }: CityCardProps) {
   } = city;
   const navigate = useNavigate();
   const dispatch = useDispatch<any>();
-  const iconUrl = `http://openweathermap.org/img/w/${weather[0].icon}.png`;
+  const iconUrl = `http://openweathermap.org/img/w/${weather[0]?.icon}.png`;
 
   const refreshWeather = () => {
     dispatch(updateCityWeatherData(name));

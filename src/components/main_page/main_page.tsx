@@ -22,7 +22,7 @@ export const MainPage = () => {
 
   useEffect(() => {
     fetchCities();
-  }, [cities]);
+  }, []);
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
       {cities &&

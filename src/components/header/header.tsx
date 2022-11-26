@@ -12,7 +12,7 @@ import Search from "../search/search";
 export const Header = () => {
   const match = useMatch("/");
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, flexWrap: "wrap" }}>
       <AppBar
         position="static"
         sx={{ backgroundColor: "rgba(18, 18, 18, 0.345)" }}
@@ -24,7 +24,6 @@ export const Header = () => {
           <Box sx={{ flexGrow: 1 }}></Box>
           {match && <Search />}
           <Box sx={{ flexGrow: 1 }}></Box>
-          <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </Box>
