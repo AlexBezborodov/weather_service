@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Provider } from "react-redux";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 import { CityDetails } from "./components/city_details";
 import { Header } from "./components/header";
@@ -13,7 +13,7 @@ import { store } from "./store/store";
 function App() {
   return (
     <Provider store={store}>
-      <Router>
+      <Router basename="/weather_service">
         <div className="App">
           <Header />
           <Layout>
