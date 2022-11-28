@@ -13,7 +13,7 @@ import { store } from "./store/store";
 function App() {
   return (
     <Provider store={store}>
-      <Router basename="/weather_service">
+      <Router basename="/">
         <div className="App">
           <Header />
           <Layout>
